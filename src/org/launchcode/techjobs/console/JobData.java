@@ -85,6 +85,35 @@ public class JobData {
     }
 
     /**
+     * TODO: CREATE METHOD FINDBYVALUE
+     */
+    public static ArrayList<HashMap<String, String>> findByValue(String value) {
+
+        // load data, if not already loaded
+        loadData();
+
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        for (HashMap<String, String> row : allJobs) {
+
+            // Iterate through each field of the row or index
+            for (HashMap.Entry<String, String> mapEntry : row.entrySet()) {
+
+                String aValue = mapEntry.getValue();
+
+                // if found, add the row to the new ArrayList jobs
+                if (aValue.contains(value)) {
+                    jobs.add(row);
+                    break; // break and move on to the next ArrayList index
+                }
+            }
+        }
+
+        return jobs;
+
+    }
+
+    /**
      * Read in data from a CSV file and store it in a list
      */
     private static void loadData() {

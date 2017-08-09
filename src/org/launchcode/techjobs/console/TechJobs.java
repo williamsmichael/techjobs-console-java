@@ -60,8 +60,16 @@ public class TechJobs {
                 System.out.println("\nSearch term: ");
                 String searchTerm = in.nextLine();
 
+                /**
+                 * TODO: call findByValue from somewhere in main
+                 */
                 if (searchField.equals("all")) {
-                    System.out.println("Search all fields not yet implemented.");
+
+                    // System.out.println("Search all fields not yet implemented.");
+
+                    // Call method to search all columns for a value
+                    printJobs(JobData.findByValue(searchTerm));
+
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
@@ -119,7 +127,7 @@ public class TechJobs {
         // if the results are empty, print friendly message
         if (someJobs.size() == 0) {
 
-            System.out.println("\nNo Results");
+            System.out.println("\n///// No Results /////");
 
         // otherwise, print results
         } else {

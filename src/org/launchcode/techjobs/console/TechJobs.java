@@ -58,10 +58,14 @@ public class TechJobs {
 
                 // What is their search term?
                 System.out.println("\nSearch term: ");
-                String searchTerm = in.nextLine();
 
                 /**
-                 * TODO: call findByValue from somewhere in main
+                 * TODO: MAKE SEARCH METHODS CASE-INSENSITIVE
+                 */
+                String searchTerm = in.nextLine().toLowerCase();
+
+                /**
+                 * TODO: call findByValue
                  */
                 if (searchField.equals("all")) {
 

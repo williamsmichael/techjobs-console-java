@@ -46,6 +46,9 @@ public class JobData {
         return values;
     }
 
+    /**
+     * Returns all in db without search term
+     */
     public static ArrayList<HashMap<String, String>> findAll() {
 
         // load data, if not already loaded
@@ -74,7 +77,10 @@ public class JobData {
 
         for (HashMap<String, String> row : allJobs) {
 
-            String aValue = row.get(column);
+            /**
+             * TODO: MAKE SEARCH METHODS CASE-INSENSITIVE
+             */
+            String aValue = row.get(column).toLowerCase();
 
             if (aValue.contains(value)) {
                 jobs.add(row);
@@ -99,7 +105,10 @@ public class JobData {
             // Iterate through each field of the row or index
             for (HashMap.Entry<String, String> mapEntry : row.entrySet()) {
 
-                String aValue = mapEntry.getValue();
+                /**
+                 * TODO: MAKE SEARCH METHODS CASE-INSENSITIVE
+                 */
+                String aValue = mapEntry.getValue().toLowerCase();
 
                 // if found, add the row to the new ArrayList jobs
                 if (aValue.contains(value)) {

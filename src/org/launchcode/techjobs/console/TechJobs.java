@@ -111,6 +111,37 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
+        /**
+         * TODO: IMPLEMENT PRINTJOBS
+         */
+        // System.out.println("printJobs is not implemented yet");
+
+        // if the results are empty, print friendly message
+        if (someJobs.size() == 0) {
+
+            System.out.println("\nNo Results");
+
+        // otherwise, print results
+        } else {
+
+            // iterate through each index of ArrayList
+            for (HashMap<String, String> map : someJobs) {
+
+                System.out.println("\n*****");
+
+                // iterate through each k,v of HashMap
+                for (HashMap.Entry<String, String> mapEntry : map.entrySet()) {
+                    String key = mapEntry.getKey();
+                    String value = mapEntry.getValue();
+                    System.out.println(key + ": " + value);
+                }
+
+                System.out.println("*****");
+
+            }
+
+        }
+
     }
+
 }
